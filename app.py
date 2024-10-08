@@ -1,8 +1,9 @@
 from flask import Flask, jsonify
 import sqlite3
-
+from flask_cors import CORS
 app = Flask(__name__)
 
+CORS(app)
 # Function to fetch news articles from the database
 def get_all_news():
     conn = sqlite3.connect('news.db')
